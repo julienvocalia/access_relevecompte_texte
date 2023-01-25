@@ -9,98 +9,13 @@
         height: 100%;
         align-items: center;
         justify-content: space-between;
-        background-color: rgb(173, 216, 233);
-      }
-
-      audio {
-        width: 100%;
-        height: 40px;
-      }
-
-      button {
-        width: 48%;
-        height: calc(100% - 40px);
-        background-color: blue;
-        color: white;
-        font-size: 24px;
+        background-color: white;
       }
     </style>
   </head>
   <body>
-    <audio controls autoplay>
-      <source src="ReleveDeCompte.mp3" type="audio/mp3"> Your browser does not support the audio element.
-    </audio>
-    <button onclick="launchAudio()" id="launchButton" style="width: 98%"> Appuyer sur l'écran pour écouter votre courrier <br />
-      <br />
-      <i class="fa fa-play" style="font-size: 500%;"></i>
-    </button>
-    <button onclick="prevAudio()" id="prevButton" style="display: none">
-      <i class="fa fa-backward" style="font-size: 500%;"></i>
-    </button>
-    <button onclick="nextAudio()" id="nextButton" style="display: none">
-      <i class="fa fa-forward" style="font-size: 500%;"></i>
-    </button>
-    <script>
-      let audio = document.querySelector('audio');
-      var timecodes = [0, 3,25,88,176,202]; // List of timecodes to jump to
-      var counter = 0; // Counter to keep track of which timecode to jump to next
-      function launchAudio() {
-        document.getElementById("launchButton").style.display = "none";
-        audio.play()
-        document.getElementById("prevButton").style.display = "inline";
-        document.getElementById("nextButton").style.display = "inline";
-      }
-
-      function prevAudio() {
-        counter = currentCounter()
-        if ((audio.currentTime - timecodes[counter] < 1) && (counter > 0)) {
-          counter = counter - 1
-        }
-        audio.currentTime = timecodes[counter];
-        audio.play();
-      }
-
-      function nextAudio() {
-        counter = currentCounter()
-        if (counter + 1 < timecodes.length) {
-          counter = counter + 1
-        } else {
-          counter = 0
-        }
-        audio.currentTime = timecodes[counter];
-        audio.play();
-      }
-
-      function currentCounter() {
-        cc = 0
-        while ((cc + 1 < timecodes.length) && (audio.currentTime >= timecodes[cc + 1])) {
-          cc = cc + 1
-        }
-        return cc
-      }
-      let startX;
-      let endX;
-      // Listen for touchstart event
-      document.addEventListener('touchstart', e => {
-        startX = e.touches[0].clientX;
-      });
-      // Listen for touchend event
-      document.addEventListener('touchend', e => {
-        endX = e.changedTouches[0].clientX;
-        // Calculate the difference between the start and end X position
-        const diff = startX - endX;
-        // If the difference is greater than 0, the user swiped left.
-        // If the difference is less than 0, the user swiped right.
-        if (diff > 0) {
-          nextAudio();
-        } else if (diff < 0) {
-          prevAudio()
-        }
-      });
-      // Listen for touchmove event to prevent the default behavior (scrolling, zooming)
-      document.addEventListener('touchmove', e => {
-        e.preventDefault();
-      });
-    </script>
+    <h1>Pole Emploi. Relevé de situation du 10/08/2022.</h1>
+    <h1>Les informations clés</h1> 2167,52€ net d'allocations dues pour 31 jours ccouvrant la période du 01/07/2022 au 31/07/2022 <h1>Dans le détails</h1>
+    <h2>Entête du courrier</h2> La Madeleine, le 25 Aout 2022, à destination de Dupont Vincent, numéro d'identifiant 4988405X Votre contact en direct : 049odile.laville@pole-emploi.net <H2>Releve de situation</H2> Pour la période du 01/07/200 au 31/07/2022, soit 31 jours Allocation d'aide au retour à l'emploi, allocations dues nombre de jours : 31 montant brut : 2717,15€ retraite complémentaire : 182,90€ Cotisation sociales : 166,78€ Impôt Revenu : 199,95€ Montant Net : 2167,52€ Allocations dues : 2167,52€ Decompte Général Allocations : 2167,52€ Aides : 0€ Autres Paiements: 0€ Prélèvements : 0€ Montant réglé : 2167,52€ Sommes trop perçues : 0€ Le montant de l'impôt sur le revenu prélevé à la source est de 199,95 €, calculé sur la base d'un taux personnalisé de 8,20 % transmis par la Direction générale des Finances publiques (DGFIP). Le détail du prélèvement à la source de l'impôt sur le revenu est disponible sur une attestation spécifique accessible depuis votre espace personnel sur www.pole-emploi.fr, dans la rubrique « Mes attestations ». <h2>Réglement du 12/08/2022</h2> Règlement de 2167,52 euros par virement bancaire au nom de M. Dupont VINCENT Domiciliation : FR7630056000920061084595652 CCFRFRPP <h2>INFORMATIONS SUR VOS DROITS AU 31/07/2022</h2> Indemnisation à l'Allocation d'Aide au Retour à l'Emploi depuis le 20/07/2021 : 377 allocations. Durée d'indemnisation restante (en jours) : 350 Allocation brute d'un montant journalier de 87,65 Euro tenant compte d'un Salaire Journalier de Référence de 196,71 Euro. Sur ce montant brut, ont été retenus au titre de : La retraite complémentaire : 3,00 % du Salaire Journalier de Référence. La CSG : 6,20 % de 98,25 % de l'allocation. La CRDS : 0,50 % de 98,25 % de l'allocation. <h2>Informations générales</h2> Nous vous rappelons que vous devez signaler au plus tôt toute modification qui pourrait intervenir dans votre situation : arrêt maladie ou maternité, reprise de travail, entrée en formation, changement d'adresse, liquidation d'un avantage de vieillesse, sur www.pole-emploi.fr. Veillez à conserver ce document, il pourra servir de justificatif auprès de l'administration fiscale. L'application du prélèvement à la source sur votre paiement n'est pas libératoire de l'impôt sur le revenu, une régularisation pourra le cas échéant intervenir lors de la liquidation définitive de votre impôt. Pour toute information au sujet du prélèvement à la source, contactez l'administration fiscale : En vous connectant à votre espace particulier à l'adresse www.impots.gouv.fr En appelant le 0809 401 401 (service gratuit + prix de l'appel) <h2>Pied de page</h2> POLE EMPLOI HAUTS-DE-FRANCE POLE EMPLOI DE LA MADELEINE IMMEUBLE LE CRYSTAL CS 50005 38 ALL VAUBAN 59031 LA MADELEINE CEDEX www.pole-emploi.fr 3949 Service gratuit + prix appel DU LUNDI AU JEUDI DE 08H30 A 12H45 ET LE VENDREDI DE 09H00 A 12H00. SUR RDV DU LUNDI AU JEUDI DE 12H45 A 16H30
   </body>
 </html>
